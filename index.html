@@ -3,227 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unit Converter</title>
+    <title>Temperature Converter</title>
     <style>
         body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-}
-
-.converter-container {
-    background: linear-gradient(145deg, #ffffff, #ffffff);
-    border-radius: 20px;
-    box-shadow: 20px 30px 100px #c1e8ff, -20px -20px 60px #9bc3f3;
-    padding: 20px;
-    width: 500px;
-}
-
-h1 {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.converter {
-    background: linear-gradient(145deg, #ffffff, #7fd0f5);
-    border-radius: 20px;
-    box-shadow: 10px 10px 30px #ffffff, -10px -10px 30px #d7e3f2;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-h2 {
-    text-align: center;
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-input[type="number"], select {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    background: linear-gradient(145deg, #ffffff, #ffffff);
-    box-shadow: inset 5px 5px 10px #ffffff, inset -5px -5px 10px #d7e3f2;
-}
-
-p {
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-#temp-result, #length-result, #weight-result {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 10px;
-    text-align: center;
-}
-
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .converter-container {
+            background: linear-gradient(145deg, #ffffff, #ffffff);
+            border-radius: 20px;
+            box-shadow: 20px 30px 100px #c1e8ff, -20px -20px 60px #9bc3f3;
+            padding: 20px;
+            width: 500px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .converter {
+            background: linear-gradient(145deg, #ffffff, #7fd0f5);
+            border-radius: 20px;
+            box-shadow: 10px 10px 30px #ffffff, -10px -10px 30px #d7e3f2;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            background: linear-gradient(145deg, #ffffff, #ffffff);
+            box-shadow: inset 5px 5px 10px #ffffff, inset -5px -5px 10px #d7e3f2;
+        }
+        p {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        #temp-result, #length-result, #weight-result {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
     <div class="converter-container">
-        <h1>Unit Converter</h1>
-
-        <!-- Temperature Converter -->
-        <div class="converter" id="temperature-converter">
-            <h2>Temperature Converter</h2>
-            <!-- Input fields for temperature conversion -->
-            <input type="number" id="temp-input" placeholder="Enter temperature">
-            <select id="temp-source-unit">
-                <option value="celsius">Celsius</option>
-                <option value="fahrenheit">Fahrenheit</option>
-            </select>
-            <p>Converts to:</p>
-            <p id="temp-result">Result</p>
+        <h1>Temperature Converter</h1>
+        <div class="converter">
+            <h2>Convert Celsius to Fahrenheit:</h2>
+            <form id="celsiusToFahrenheitForm">
+                <input type="number" id="celsiusInput" name="celsiusInput" placeholder="Enter temperature in Celsius...">
+                <p id="temp-result"></p>
+            </form>
         </div>
-
-        <!-- Length Converter -->
-<div class="converter" id="length-converter">
-    <h2>Length Converter</h2>
-    <!-- Input fields for length conversion -->
-    <input type="number" id="length-input" placeholder="Enter length">
-    <select id="length-source-unit">
-        <option value="meters">Meters</option>
-        <option value="feet">Feet</option>
-        <option value="inches">Inches</option>
-        <option value="centimeters">Centimeters</option>
-        <option value="yards">Yards</option>
-    </select>
-    <p>Converts to:</p>
-    <p id="length-result">Result</p>
-</div>
-
-<!-- Weight Converter -->
-<div class="converter" id="weight-converter">
-    <h2>Weight Converter</h2>
-    <!-- Input fields for weight conversion -->
-    <input type="number" id="weight-input" placeholder="Enter weight">
-    <select id="weight-source-unit">
-        <option value="kilograms">Kilograms</option>
-        <option value="pounds">Pounds</option>
-        <option value="grams">Grams</option>
-        <option value="ounces">Ounces</option>
-    </select>
-    <p>Converts to:</p>
-    <p id="weight-result">Result</p>
-</div>
-
-<!-- Temperature Converter -->
-<div class="converter" id="temperature-converter">
-    <h2>Temperature Converter</h2>
-    <!-- Input fields for temperature conversion -->
-    <input type="number" id="temp-input" placeholder="Enter temperature">
-    <select id="temp-source-unit">
-        <option value="celsius">Celsius</option>
-        <option value="fahrenheit">Fahrenheit</option>
-    </select>
-    <p>Converts to:</p>
-    <p id="temp-result">Result</p>
-</div>
-
+        <div class="converter">
+            <h2>Convert Celsius to Kelvin:</h2>
+            <form id="celsiusToKelvinForm">
+                <input type="number" id="celsiusInput2" name="celsiusInput2" placeholder="Enter temperature in Celsius...">
+                <p id="temp-result2"></p>
+            </form>
+        </div>
+        <div class="converter">
+            <h2>Convert Fahrenheit to Celsius:</h2>
+            <form id="fahrenheitToCelsiusForm">
+                <input type="number" id="fahrenheitInput" name="fahrenheitInput" placeholder="Enter temperature in Fahrenheit...">
+                <p id="temp-result3"></p>
+            </form>
+        </div>
+        <div class="converter">
+            <h2>Convert Fahrenheit to Kelvin:</h2>
+            <form id="fahrenheitToKelvinForm">
+                <input type="number" id="fahrenheitInput2" name="fahrenheitInput2" placeholder="Enter temperature in Fahrenheit...">
+                <p id="temp-result4"></p>
+            </form>
+        </div>
+        <div class="converter">
+            <h2>Convert Kelvin to Celsius:</h2>
+            <form id="kelvinToCelsiusForm">
+                <input type="number" id="kelvinInput" name="kelvinInput" placeholder="Enter temperature in Kelvin...">
+                <p id="temp-result5"></p>
+            </form>
+        </div>
+        <div class="converter">
+            <h2>Convert Kelvin to Fahrenheit:</h2>
+            <form id="kelvinToFahrenheitForm">
+                <input type="number" id="kelvinInput2" name="kelvinInput2" placeholder="Enter temperature in Kelvin...">
+                <p id="temp-result6"></p>
+            </form>
+        </div>
     </div>
 
     <script>
-        // Temperature Converter
-const tempInput = document.getElementById("temp-input");
-const tempSourceUnit = document.getElementById("temp-source-unit");
-const tempResult = document.getElementById("temp-result");
+        // Celsius to Fahrenheit
+        document.getElementById('celsiusToFahrenheitForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var celsius = parseFloat(document.getElementById('celsiusInput').value);
+            var tempResult = document.getElementById('temp-result');
+            if (!isNaN(celsius)) {
+                var fahrenheit = (celsius * 9/5) + 32;
+                tempResult.textContent = celsius + '°C is ' + fahrenheit.toFixed(2) + '°F';
+            } else {
+                tempResult.textContent = 'Please enter a valid temperature';
+            }
+        });
 
-tempInput.addEventListener("input", convertTemperature);
-tempSourceUnit.addEventListener("change", convertTemperature);
+        // Celsius to Kelvin
+        document.getElementById('celsiusToKelvinForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var celsius = parseFloat(document.getElementById('celsiusInput2').value);
+            var tempResult = document.getElementById('temp-result2');
+            if (!isNaN(celsius)) {
+                var kelvin = celsius + 273.15;
+                tempResult.textContent = celsius + '°C is ' + kelvin.toFixed(2) + 'K';
+            } else {
+                tempResult.textContent = 'Please enter a valid temperature';
+            }
+        });
 
-function convertTemperature() {
-    const inputTemperature = parseFloat(tempInput.value);
-    const sourceUnit = tempSourceUnit.value;
-    let resultTemperature;
+        // Fahrenheit to Celsius
+        document.getElementById('fahrenheitToCelsiusForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var fahrenheit = parseFloat(document.getElementById('fahrenheitInput').value);
+            var tempResult = document.getElementById('temp-result3');
+            if (!isNaN(fahrenheit)) {
+                var celsius = (fahrenheit - 32) * 5/9;
+                tempResult.textContent = fahrenheit + '°F is ' + celsius.toFixed(2) + '°C';
+            } else {
+                tempResult.textContent = 'Please enter a valid temperature';
+            }
+        });
 
-    if (sourceUnit === "celsius") {
-        resultTemperature = (inputTemperature * 9/5) + 32;
-        tempResult.textContent = `${inputTemperature}°C = ${resultTemperature.toFixed(2)}°F`;
-    } else if (sourceUnit === "fahrenheit") {
-        resultTemperature = (inputTemperature - 32) * 5/9;
-        tempResult.textContent = `${inputTemperature}°F = ${resultTemperature.toFixed(2)}°C`;
-    } else {
-        tempResult.textContent = "Invalid unit.";
-    }
-}
+        // Fahrenheit to Kelvin
+        document.getElementById('fahrenheitToKelvinForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var fahrenheit = parseFloat(document.getElementById('fahrenheitInput2').value);
+            var tempResult = document.getElementById('temp-result4');
+            if (!isNaN(fahrenheit)) {
+                var kelvin = (fahrenheit + 459.67) * 5/9;
+                tempResult.textContent = fahrenheit + '°F is ' + kelvin.toFixed(2) + 'K';
+            } else {
+                tempResult.textContent = 'Please enter a valid temperature';
+            }
+        });
 
-// Length Converter
-const lengthInput = document.getElementById("length-input");
-const lengthSourceUnit = document.getElementById("length-source-unit");
-const lengthResult = document.getElementById("length-result");
+        // Kelvin to Celsius
+        document.getElementById('kelvinToCelsiusForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var kelvin = parseFloat(document.getElementById('kelvinInput').value);
+            var tempResult = document.getElementById('temp-result5');
+            if (!isNaN(kelvin)) {
+                var celsius = kelvin - 273.15;
+                tempResult.textContent = kelvin + 'K is ' + celsius.toFixed(2) + '°C';
+            } else {
+                tempResult.textContent = 'Please enter a valid temperature';
+            }
+        });
 
-lengthInput.addEventListener("input", convertLength);
-lengthSourceUnit.addEventListener("change", convertLength);
-
-function convertLength() {
-    const inputLength = parseFloat(lengthInput.value);
-    const sourceUnit = lengthSourceUnit.value;
-    let resultLength;
-
-    if (sourceUnit === "meters") {
-        // Conversion logic for meters to other units
-        resultLength = inputLength;
-    } else if (sourceUnit === "feet") {
-        // Conversion logic for feet to other units
-        resultLength = inputLength * 3.28084;
-    } else if (sourceUnit === "inches") {
-        // Conversion logic for inches to other units
-        resultLength = inputLength * 39.3701;
-    } else if (sourceUnit === "centimeters") {
-        // Conversion logic for centimeters to other units
-        resultLength = inputLength * 100;
-    } else if (sourceUnit === "yards") {
-        // Conversion logic for yards to other units
-        resultLength = inputLength * 1.09361;
-    } else {
-        resultLength = "Invalid unit.";
-    }
-
-    lengthResult.textContent = `${inputLength} ${sourceUnit} = ${resultLength.toFixed(2)} ${lengthSourceUnit.value}`;
-}
-
-// Weight Converter
-const weightInput = document.getElementById("weight-input");
-const weightSourceUnit = document.getElementById("weight-source-unit");
-const weightResult = document.getElementById("weight-result");
-
-weightInput.addEventListener("input", convertWeight);
-weightSourceUnit.addEventListener("change", convertWeight);
-
-function convertWeight() {
-    const inputWeight = parseFloat(weightInput.value);
-    const sourceUnit = weightSourceUnit.value;
-    let resultWeight;
-
-    if (sourceUnit === "kilograms") {
-        // Conversion logic for kilograms to other units
-        resultWeight = inputWeight;
-    } else if (sourceUnit === "pounds") {
-        // Conversion logic for pounds to other units
-        resultWeight = inputWeight * 2.20462;
-    } else if (sourceUnit === "grams") {
-        // Conversion logic for grams to other units
-        resultWeight = inputWeight * 1000;
-    } else if (sourceUnit === "ounces") {
-        // Conversion logic for ounces to other units
-        resultWeight = inputWeight * 35.274;
-    } else {
-        resultWeight = "Invalid unit.";
-    }
-
-    weightResult.textContent = `${inputWeight} ${sourceUnit} = ${resultWeight.toFixed(2)} ${weightSourceUnit.value}`;
-}
-
+        // Kelvin to Fahrenheit
+        document.getElementById('kelvinToFahrenheitForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var kelvin = parseFloat(document.getElementById('kelvinInput2').value);
+            var tempResult = document.getElementById('temp-result6');
+            if (!isNaN(kelvin)) {
+                var fahrenheit = (kelvin * 9/5) - 459.67;
+                tempResult.textContent = kelvin + 'K is ' + fahrenheit.toFixed(2) + '°F';
+            } else {
+                tempResult.textContent = 'Please enter a valid temperature';
+            }
+        });
     </script>
 </body>
 </html>
