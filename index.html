@@ -38,7 +38,7 @@
             font-size: 18px;
             margin-bottom: 10px;
         }
-        input[type="number"], select {
+        input[type="number"], select, button {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -53,7 +53,7 @@
             font-weight: bold;
             margin-top: 10px;
         }
-        #temp-result, #length-result, #weight-result {
+        #temp-result, #temp-result2, #temp-result3, #temp-result4, #temp-result5, #temp-result6 {
             font-size: 18px;
             font-weight: bold;
             margin-top: 10px;
@@ -68,6 +68,7 @@
             <h2>Convert Celsius to Fahrenheit:</h2>
             <form id="celsiusToFahrenheitForm">
                 <input type="number" id="celsiusInput" name="celsiusInput" placeholder="Enter temperature in Celsius...">
+                <button type="button" onclick="convertCelsiusToFahrenheit()">Convert</button>
                 <p id="temp-result"></p>
             </form>
         </div>
@@ -75,6 +76,7 @@
             <h2>Convert Celsius to Kelvin:</h2>
             <form id="celsiusToKelvinForm">
                 <input type="number" id="celsiusInput2" name="celsiusInput2" placeholder="Enter temperature in Celsius...">
+                <button type="button" onclick="convertCelsiusToKelvin()">Convert</button>
                 <p id="temp-result2"></p>
             </form>
         </div>
@@ -82,6 +84,7 @@
             <h2>Convert Fahrenheit to Celsius:</h2>
             <form id="fahrenheitToCelsiusForm">
                 <input type="number" id="fahrenheitInput" name="fahrenheitInput" placeholder="Enter temperature in Fahrenheit...">
+                <button type="button" onclick="convertFahrenheitToCelsius()">Convert</button>
                 <p id="temp-result3"></p>
             </form>
         </div>
@@ -89,6 +92,7 @@
             <h2>Convert Fahrenheit to Kelvin:</h2>
             <form id="fahrenheitToKelvinForm">
                 <input type="number" id="fahrenheitInput2" name="fahrenheitInput2" placeholder="Enter temperature in Fahrenheit...">
+                <button type="button" onclick="convertFahrenheitToKelvin()">Convert</button>
                 <p id="temp-result4"></p>
             </form>
         </div>
@@ -96,6 +100,7 @@
             <h2>Convert Kelvin to Celsius:</h2>
             <form id="kelvinToCelsiusForm">
                 <input type="number" id="kelvinInput" name="kelvinInput" placeholder="Enter temperature in Kelvin...">
+                <button type="button" onclick="convertKelvinToCelsius()">Convert</button>
                 <p id="temp-result5"></p>
             </form>
         </div>
@@ -103,6 +108,7 @@
             <h2>Convert Kelvin to Fahrenheit:</h2>
             <form id="kelvinToFahrenheitForm">
                 <input type="number" id="kelvinInput2" name="kelvinInput2" placeholder="Enter temperature in Kelvin...">
+                <button type="button" onclick="convertKelvinToFahrenheit()">Convert</button>
                 <p id="temp-result6"></p>
             </form>
         </div>
@@ -110,8 +116,7 @@
 
     <script>
         // Celsius to Fahrenheit
-        document.getElementById('celsiusToFahrenheitForm').addEventListener('submit', function(event) {
-            event.preventDefault();
+        function convertCelsiusToFahrenheit() {
             var celsius = parseFloat(document.getElementById('celsiusInput').value);
             var tempResult = document.getElementById('temp-result');
             if (!isNaN(celsius)) {
@@ -120,11 +125,10 @@
             } else {
                 tempResult.textContent = 'Please enter a valid temperature';
             }
-        });
+        }
 
         // Celsius to Kelvin
-        document.getElementById('celsiusToKelvinForm').addEventListener('submit', function(event) {
-            event.preventDefault();
+        function convertCelsiusToKelvin() {
             var celsius = parseFloat(document.getElementById('celsiusInput2').value);
             var tempResult = document.getElementById('temp-result2');
             if (!isNaN(celsius)) {
@@ -133,11 +137,10 @@
             } else {
                 tempResult.textContent = 'Please enter a valid temperature';
             }
-        });
+        }
 
         // Fahrenheit to Celsius
-        document.getElementById('fahrenheitToCelsiusForm').addEventListener('submit', function(event) {
-            event.preventDefault();
+        function convertFahrenheitToCelsius() {
             var fahrenheit = parseFloat(document.getElementById('fahrenheitInput').value);
             var tempResult = document.getElementById('temp-result3');
             if (!isNaN(fahrenheit)) {
@@ -146,11 +149,10 @@
             } else {
                 tempResult.textContent = 'Please enter a valid temperature';
             }
-        });
+        }
 
         // Fahrenheit to Kelvin
-        document.getElementById('fahrenheitToKelvinForm').addEventListener('submit', function(event) {
-            event.preventDefault();
+        function convertFahrenheitToKelvin() {
             var fahrenheit = parseFloat(document.getElementById('fahrenheitInput2').value);
             var tempResult = document.getElementById('temp-result4');
             if (!isNaN(fahrenheit)) {
@@ -159,11 +161,10 @@
             } else {
                 tempResult.textContent = 'Please enter a valid temperature';
             }
-        });
+        }
 
         // Kelvin to Celsius
-        document.getElementById('kelvinToCelsiusForm').addEventListener('submit', function(event) {
-            event.preventDefault();
+        function convertKelvinToCelsius() {
             var kelvin = parseFloat(document.getElementById('kelvinInput').value);
             var tempResult = document.getElementById('temp-result5');
             if (!isNaN(kelvin)) {
@@ -172,11 +173,10 @@
             } else {
                 tempResult.textContent = 'Please enter a valid temperature';
             }
-        });
+        }
 
         // Kelvin to Fahrenheit
-        document.getElementById('kelvinToFahrenheitForm').addEventListener('submit', function(event) {
-            event.preventDefault();
+        function convertKelvinToFahrenheit() {
             var kelvin = parseFloat(document.getElementById('kelvinInput2').value);
             var tempResult = document.getElementById('temp-result6');
             if (!isNaN(kelvin)) {
@@ -185,7 +185,7 @@
             } else {
                 tempResult.textContent = 'Please enter a valid temperature';
             }
-        });
+        }
     </script>
 </body>
 </html>
